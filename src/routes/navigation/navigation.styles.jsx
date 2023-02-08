@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const NavigationContainer = styled.div`
   height: 70px;
@@ -26,4 +26,12 @@ export const NavLinks = styled.div`
 export const NavLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+`;
+
+export const Avatar = styled.span`
+  background: #5624d0;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
 `;
