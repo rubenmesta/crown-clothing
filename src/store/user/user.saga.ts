@@ -58,14 +58,14 @@ export function* signInWithEmail({
   payload: { email, password },
 }: EmailSignInStart) {
   try {
-    const data = yield* call(
+    const userCredential = yield* call(
       signInAuthUserWithEmailAndPassword,
       email,
       password
     );
 
-    if (data) {
-      const { user } = data;
+    if (userCredential) {
+      const { user } = userCredential;
       yield* call(getSnapshotFromUserAuth, user);
     }
   } catch (error) {
@@ -87,14 +87,14 @@ export function* signUp({
   payload: { email, password, displayName },
 }: SignUpStart) {
   try {
-    const data = yield* call(
+    const userCredential = yield* call(
       createAuthUserWithEmailAndPassword,
       email,
       password
     );
 
-    if (data) {
-      const { user } = data;
+    if (userCredential) {
+      const { user } = userCredential;
       yield* put(signUpSuccess(user, { displayName }));
     }
   } catch (error) {
