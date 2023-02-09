@@ -34,7 +34,7 @@ const firebaseConfig = {
 };
 
 // ts-ignore we don;t need this
-const firebaseApp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 
